@@ -8,8 +8,9 @@ const useFetch = (url) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        setLoading(true);
+      setLoading(true); // Putting it in the try block makes it susceptible to not running
+      
+    try {
         const res = await makeRequest.get(url);
         setData(res.data.data);
       } catch (err) {
